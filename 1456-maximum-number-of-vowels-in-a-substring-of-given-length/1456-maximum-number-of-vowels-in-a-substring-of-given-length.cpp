@@ -1,16 +1,19 @@
 class Solution {
+    bool isVowel(char c){
+        return (c=='a' or c=='e' or c=='i' or c=='o' or c=='u');
+    }
 public:
     int maxVowels(string s, int k) {
-        unordered_set<char> v{'a', 'e', 'i', 'o', 'u'};
-        int c=0;
-        for(int i=0;i<k;i++){
-            c+=v.count(s[i]);
+        int r=0,l=0,maxVowels=0,m=0;
+        while(r<s.size()){
+            if(r>=k){
+                if(isVowel(s[l])) m--;
+                l++;
+            }
+            if(isVowel(s[r])) m++;
+            r++;
+            maxVowels=max(maxVowels,min(k,m));
         }
-        int a= c;
-        for (int i = k; i < s.length(); i++){
-            c+=v.count(s[i]) - v.count(s[i-k]);
-            a=max(a,c);
-        }
-        return a;
+        return maxVowels;
     }
 };

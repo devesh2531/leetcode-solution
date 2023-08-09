@@ -14,8 +14,7 @@ public:
     int maxDepth(TreeNode* r) {
         if(!r)
             return 0;
-        int m = maxDepth(r->left);
-        int n = maxDepth(r->right);
-        return max(m,n)+1;
+        
+        return max(maxDepth(r->left),maxDepth(r->right))+1;
     }
 };

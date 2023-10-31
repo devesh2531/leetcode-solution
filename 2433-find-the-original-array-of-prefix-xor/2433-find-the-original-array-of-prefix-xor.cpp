@@ -1,12 +1,15 @@
 class Solution {
 public:
     vector<int> findArray(vector<int>& pref) {
-        int n= pref.size();
-        vector<int> a;
-        a.push_back(pref[0]);
-        for(int i=1; i<n;i++){
-            a.push_back(pref[i]^pref[i-1]);
+       ios_base::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
+
+        int n = pref.size();
+        for(int i = n - 1; i >= 1;  i--)
+        {
+            pref[i] = (pref[i] ^ pref[i-1]);
         }
-        return a;
+        return pref;
     }
 };

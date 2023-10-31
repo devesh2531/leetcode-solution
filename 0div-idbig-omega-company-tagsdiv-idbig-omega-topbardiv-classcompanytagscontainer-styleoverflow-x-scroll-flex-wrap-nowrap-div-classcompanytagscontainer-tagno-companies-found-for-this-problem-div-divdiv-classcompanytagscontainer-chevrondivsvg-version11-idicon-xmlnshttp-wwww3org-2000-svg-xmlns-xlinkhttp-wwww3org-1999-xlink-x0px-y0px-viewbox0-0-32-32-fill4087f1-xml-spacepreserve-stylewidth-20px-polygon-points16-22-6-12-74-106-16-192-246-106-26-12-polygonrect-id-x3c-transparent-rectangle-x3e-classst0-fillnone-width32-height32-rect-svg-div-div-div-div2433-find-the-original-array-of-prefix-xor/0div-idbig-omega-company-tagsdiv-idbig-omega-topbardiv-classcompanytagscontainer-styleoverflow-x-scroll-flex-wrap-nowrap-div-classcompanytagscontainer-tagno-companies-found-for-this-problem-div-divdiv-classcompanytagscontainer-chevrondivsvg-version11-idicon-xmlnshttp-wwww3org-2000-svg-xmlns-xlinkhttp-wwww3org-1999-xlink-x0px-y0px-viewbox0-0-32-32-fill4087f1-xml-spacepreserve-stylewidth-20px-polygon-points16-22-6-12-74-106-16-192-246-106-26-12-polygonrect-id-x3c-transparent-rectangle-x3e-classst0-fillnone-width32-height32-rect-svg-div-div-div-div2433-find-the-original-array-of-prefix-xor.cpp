@@ -6,10 +6,12 @@ public:
         a.push_back(pref[0]);
         int j=0,p;
         for(auto i: pref){
-            if(j>0)
+            if(j>0){
             a.push_back(i^p);
-            p=i;
+           }
+            else
             j++;
+             p=i;
         }
         return a;
     }

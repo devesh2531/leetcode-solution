@@ -4,8 +4,12 @@ public:
         int n= pref.size();
         vector<int> a;
         a.push_back(pref[0]);
-        for(int i=1; i<n;i++){
-            a.push_back(pref[i]^pref[i-1]);
+        int j=0,p;
+        for(auto i: pref){
+            if(j>0)
+            a.push_back(i^p);
+            p=i;
+            j++;
         }
         return a;
     }

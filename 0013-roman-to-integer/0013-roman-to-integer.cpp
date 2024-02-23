@@ -1,4 +1,5 @@
 class Solution {
+    
 public:
     int romanToInt(string s) {
         int ans=0;
@@ -11,12 +12,14 @@ public:
         m['D']=500;
         m['M']=1000;
         
-        for(int i=0;i<s.size();i++){
+        // char a=s[0];
+        for(int i=0;i<=s.size()-1;i++){
             if(m[s[i]]>=m[s[i+1]]){
                 ans+=m[s[i]];
             }else{
                 ans-=m[s[i]];
             }
+         // a=i;
         }
         return ans;
     }

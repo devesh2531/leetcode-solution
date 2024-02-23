@@ -10,8 +10,8 @@ public:
         m['C']=100;
         m['D']=500;
         m['M']=1000;
-        
-        for(int i=0;i<s.size();i++){
+        int n=s.size();
+        for(int i=0;i<n;i++){
             if(m[s[i]]>=m[s[i+1]]){
                 ans+=m[s[i]];
             }else{
